@@ -1,0 +1,1434 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "4bb5cb19",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d48dd67f",
+   "metadata": {},
+   "source": [
+    "# Perform the Following operation on user created data using Numpy Lib(30)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "05511f91",
+   "metadata": {},
+   "source": [
+    "## # 1-D Array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b7aa310f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 1 7 3 7 0 5 3 6 3 2 3 8 5 1]\n"
+     ]
+    }
+   ],
+   "source": [
+    "np.random.seed(7)\n",
+    "one_D_array = np.random.randint(0, 10, (15))\n",
+    "print(one_D_array)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "7a5bc647",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(15,)\n",
+      "15\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(one_D_array.shape)\n",
+    "print(one_D_array.size)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "786dec3c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "1\n",
+      "7\n",
+      "3\n",
+      "7\n",
+      "0\n",
+      "5\n",
+      "3\n",
+      "6\n",
+      "3\n",
+      "2\n",
+      "3\n",
+      "8\n",
+      "5\n",
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in one_D_array:\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "4c3e9a9d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "6\n",
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(one_D_array[5])\n",
+    "print(one_D_array[8])\n",
+    "print(one_D_array[10])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "e37cac9d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 1 7 3 7 0 5 3] \n",
+      "\n",
+      "[7 0 5 3 6 3 2 3 8 5 1] \n",
+      "\n",
+      "[7 3] \n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(one_D_array[:8], \"\\n\")\n",
+    "print(one_D_array[4:], \"\\n\")\n",
+    "print(one_D_array[4:8:3], \"\\n\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f219a7e5",
+   "metadata": {},
+   "source": [
+    "### 2-D Array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "6e4454c8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 275 1320  637  602 1703]\n",
+      " [ 311 1019 1739 1472 1309]\n",
+      " [1522  635 1708  445  466]\n",
+      " [ 654  830 1004 1291 1192]\n",
+      " [1556  491 1040 1636 1199]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "np.random.seed(7)\n",
+    "two_D_array = np.random.randint(100, 2000, (5, 5))\n",
+    "print(two_D_array)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "ba067f07",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(5, 5)\n",
+      "25\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(two_D_array.shape)\n",
+    "print(two_D_array.size)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "4be50c84",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "275\n",
+      "1320\n",
+      "637\n",
+      "602\n",
+      "1703\n",
+      "311\n",
+      "1019\n",
+      "1739\n",
+      "1472\n",
+      "1309\n",
+      "1522\n",
+      "635\n",
+      "1708\n",
+      "445\n",
+      "466\n",
+      "654\n",
+      "830\n",
+      "1004\n",
+      "1291\n",
+      "1192\n",
+      "1556\n",
+      "491\n",
+      "1040\n",
+      "1636\n",
+      "1199\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in two_D_array:\n",
+    "    for j in i:\n",
+    "        print(j)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "3ef1a3d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "311\n",
+      "445\n",
+      "1703\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(two_D_array[1][0])\n",
+    "print(two_D_array[2][3])\n",
+    "print(two_D_array[0, 4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "cc71596c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1522  635 1708  445  466] \n",
+      "\n",
+      "[[ 654  830 1004 1291 1192]\n",
+      " [1556  491 1040 1636 1199]] \n",
+      "\n",
+      "[[ 275 1320  637  602 1703]] \n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(two_D_array[:8][2], \"\\n\")\n",
+    "print(two_D_array[2:][1:], \"\\n\")\n",
+    "print(two_D_array[:][:1], \"\\n\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "52693c17",
+   "metadata": {},
+   "source": [
+    "### 3-D Array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "8febf374",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[1389 1249  627]\n",
+      "  [1444 1493 1247]\n",
+      "  [1280  833 1620]\n",
+      "  [1132 1197  356]\n",
+      "  [ 590  140  602]]\n",
+      "\n",
+      " [[1544  471 1652]\n",
+      "  [ 456  339  495]\n",
+      "  [ 154 1468 1487]\n",
+      "  [1246  674 1669]\n",
+      "  [1324 1992 1074]]\n",
+      "\n",
+      " [[1813 1815 1178]\n",
+      "  [ 177 1577  113]\n",
+      "  [ 855  509 1506]\n",
+      "  [ 753 1984 1466]\n",
+      "  [1922  770  189]]\n",
+      "\n",
+      " [[ 752 1445  643]\n",
+      "  [ 925 1928  383]\n",
+      "  [1654  193  177]\n",
+      "  [ 506 1019  706]\n",
+      "  [ 860  495 1792]]\n",
+      "\n",
+      " [[1198 1340 1517]\n",
+      "  [ 115 1654 1588]\n",
+      "  [ 730 1195 1468]\n",
+      "  [1519 1781 1554]\n",
+      "  [1259  815  896]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "np.random.seed(10)\n",
+    "three_D_array = np.random.randint(100, 2000, (5, 5, 3))\n",
+    "print(three_D_array)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "932adf1f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(5, 5, 3)\n",
+      "75\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(three_D_array.shape)\n",
+    "print(three_D_array.size)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "95623465",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1389\n",
+      "1249\n",
+      "627\n",
+      "1444\n",
+      "1493\n",
+      "1247\n",
+      "1280\n",
+      "833\n",
+      "1620\n",
+      "1132\n",
+      "1197\n",
+      "356\n",
+      "590\n",
+      "140\n",
+      "602\n",
+      "1544\n",
+      "471\n",
+      "1652\n",
+      "456\n",
+      "339\n",
+      "495\n",
+      "154\n",
+      "1468\n",
+      "1487\n",
+      "1246\n",
+      "674\n",
+      "1669\n",
+      "1324\n",
+      "1992\n",
+      "1074\n",
+      "1813\n",
+      "1815\n",
+      "1178\n",
+      "177\n",
+      "1577\n",
+      "113\n",
+      "855\n",
+      "509\n",
+      "1506\n",
+      "753\n",
+      "1984\n",
+      "1466\n",
+      "1922\n",
+      "770\n",
+      "189\n",
+      "752\n",
+      "1445\n",
+      "643\n",
+      "925\n",
+      "1928\n",
+      "383\n",
+      "1654\n",
+      "193\n",
+      "177\n",
+      "506\n",
+      "1019\n",
+      "706\n",
+      "860\n",
+      "495\n",
+      "1792\n",
+      "1198\n",
+      "1340\n",
+      "1517\n",
+      "115\n",
+      "1654\n",
+      "1588\n",
+      "730\n",
+      "1195\n",
+      "1468\n",
+      "1519\n",
+      "1781\n",
+      "1554\n",
+      "1259\n",
+      "815\n",
+      "896\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in three_D_array:\n",
+    "    for j in i:\n",
+    "        for k in j:\n",
+    "            print(k)\n",
+    "\n",
+    "            "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "f1ce7f08",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1468\n",
+      "753\n",
+      "356\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(three_D_array[1][2][1])\n",
+    "print(three_D_array[2][3][0])\n",
+    "print(three_D_array[0][3][2])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b974788b",
+   "metadata": {},
+   "source": [
+    "# Given Matrix Perform these Functions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "32d542ec",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "m1 = np.array([[10, 20, 30], \n",
+    "               [5, 6, 9], \n",
+    "               [11, 15, 17]])\n",
+    "\n",
+    "m2 = np.array([[1, 20, 30], \n",
+    "               [5, 6, 9], \n",
+    "               [2, 1, 3]])\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "93e2f9e2",
+   "metadata": {},
+   "source": [
+    "### Addition of two Matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "f5ba244f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[11 40 60]\n",
+      " [10 12 18]\n",
+      " [13 16 20]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(m1 + m2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34fd4964",
+   "metadata": {},
+   "source": [
+    "### Subtraction of two Matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "3e8bb555",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 9  0  0]\n",
+      " [ 0  0  0]\n",
+      " [ 9 14 14]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(m1 - m2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c363c17d",
+   "metadata": {},
+   "source": [
+    "### Multiplication of two Matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "133c1c27",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 10 400 900]\n",
+      " [ 25  36  81]\n",
+      " [ 22  15  51]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(m1 * m2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a6e9a050",
+   "metadata": {},
+   "source": [
+    "### Dot Product"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "c1a37d9f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[170 350 570]\n",
+      " [ 53 145 231]\n",
+      " [120 327 516]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(np.dot(m1, m2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ae711eb1",
+   "metadata": {},
+   "source": [
+    "### Find the Diagonal element"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "d8c4e827",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Diagonal of Matrix 1 is [10  6 17] \n",
+      "\n",
+      "Diagonal of Matrix 2 is [1 6 3]\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\"Diagonal of Matrix 1 is {np.diagonal(m1)} \\n\")\n",
+    "print(f\"Diagonal of Matrix 2 is {np.diagonal(m2)}\\n\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "67b60c00",
+   "metadata": {},
+   "source": [
+    "### Minimum And Maximum element in Matrix 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "5b350c25",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " Minimum Value of Matrix 1 is 5\n",
+      " Maximum Value of Matrix 1 is 30\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\" Minimum Value of Matrix 1 is {np.min(m1)}\")\n",
+    "print(f\" Maximum Value of Matrix 1 is {np.max(m1)}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2c845175",
+   "metadata": {},
+   "source": [
+    "### Find the Product and Sum of the element of matrix 1 and martix 2 "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "dec73659",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The sum of Matrix 1 is 123 and its product is 249132704\n",
+      "The sum of Matrix 2 is 77 and its product is 972000\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\"The sum of Matrix 1 is {np.sum(m1)} and its product is {np.product(m1)}\")\n",
+    "print(f\"The sum of Matrix 2 is {np.sum(m2)} and its product is {np.product(m2)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "9f259a4f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The mean of Matrix 1 is 13.666666666666666 and its median is 11.0\n",
+      "The mean of Matrix 2 is 8.555555555555555 and its median is 5.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\"The mean of Matrix 1 is {np.mean(m1)} and its median is {np.median(m1)}\")\n",
+    "print(f\"The mean of Matrix 2 is {np.mean(m2)} and its median is {np.median(m2)}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b6d9f9ac",
+   "metadata": {},
+   "source": [
+    "_______________________________________________________________________________________________________________________________"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8d88cfc2",
+   "metadata": {},
+   "source": [
+    "# Perform the Following operation on user created data using Numpy Lib(60)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "41149ff4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7e1b9654",
+   "metadata": {},
+   "source": [
+    "### Reading the .CSV file "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "12bc3eaf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "heart = pd.read_csv(\"heart_disease.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cca28759",
+   "metadata": {},
+   "source": [
+    "### Viewing the .CSV file "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "126f49d5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>age</th>\n",
+       "      <th>sex</th>\n",
+       "      <th>cp</th>\n",
+       "      <th>trestbps</th>\n",
+       "      <th>chol</th>\n",
+       "      <th>fbs</th>\n",
+       "      <th>restecg</th>\n",
+       "      <th>thalach</th>\n",
+       "      <th>exang</th>\n",
+       "      <th>oldpeak</th>\n",
+       "      <th>slope</th>\n",
+       "      <th>ca</th>\n",
+       "      <th>thal</th>\n",
+       "      <th>target</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>63</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>145</td>\n",
+       "      <td>233</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>150</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2.3</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>37</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>130</td>\n",
+       "      <td>250</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>187</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>41</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>130</td>\n",
+       "      <td>204</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>172</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1.4</td>\n",
+       "      <td>2</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>56</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>120</td>\n",
+       "      <td>236</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>178</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0.8</td>\n",
+       "      <td>2</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>57</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>120</td>\n",
+       "      <td>354</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>163</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0.6</td>\n",
+       "      <td>2</td>\n",
+       "      <td>0</td>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>298</th>\n",
+       "      <td>57</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>140</td>\n",
+       "      <td>241</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>123</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0.2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>299</th>\n",
+       "      <td>45</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>110</td>\n",
+       "      <td>264</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>132</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1.2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>300</th>\n",
+       "      <td>68</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>144</td>\n",
+       "      <td>193</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>141</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3.4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>301</th>\n",
+       "      <td>57</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>130</td>\n",
+       "      <td>131</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>115</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1.2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>302</th>\n",
+       "      <td>57</td>\n",
+       "      <td>0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>130</td>\n",
+       "      <td>236</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>174</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>2</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>303 rows × 14 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     age  sex  cp  trestbps  chol  fbs  restecg  thalach  exang  oldpeak  \\\n",
+       "0     63    1   3       145   233    1        0      150      0      2.3   \n",
+       "1     37    1   2       130   250    0        1      187      0      3.5   \n",
+       "2     41    0   1       130   204    0        0      172      0      1.4   \n",
+       "3     56    1   1       120   236    0        1      178      0      0.8   \n",
+       "4     57    0   0       120   354    0        1      163      1      0.6   \n",
+       "..   ...  ...  ..       ...   ...  ...      ...      ...    ...      ...   \n",
+       "298   57    0   0       140   241    0        1      123      1      0.2   \n",
+       "299   45    1   3       110   264    0        1      132      0      1.2   \n",
+       "300   68    1   0       144   193    1        1      141      0      3.4   \n",
+       "301   57    1   0       130   131    0        1      115      1      1.2   \n",
+       "302   57    0   1       130   236    0        0      174      0      0.0   \n",
+       "\n",
+       "     slope  ca  thal  target  \n",
+       "0        0   0     1       1  \n",
+       "1        0   0     2       1  \n",
+       "2        2   0     2       1  \n",
+       "3        2   0     2       1  \n",
+       "4        2   0     2       1  \n",
+       "..     ...  ..   ...     ...  \n",
+       "298      1   0     3       0  \n",
+       "299      1   0     3       0  \n",
+       "300      1   2     3       0  \n",
+       "301      1   1     3       0  \n",
+       "302      1   1     2       0  \n",
+       "\n",
+       "[303 rows x 14 columns]"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "heart"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25daa2f3",
+   "metadata": {},
+   "source": [
+    "### Read the Dataset in the form of Numpy matrix and store it in a variable named as NPARR"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "0db2ab7d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[63. 37. 41. ... 68. 57. 57.]]\n",
+      "\n",
+      " [[ 1.  1.  0. ...  1.  1.  0.]]\n",
+      "\n",
+      " [[ 3.  2.  1. ...  0.  0.  1.]]\n",
+      "\n",
+      " ...\n",
+      "\n",
+      " [[ 0.  0.  0. ...  2.  1.  1.]]\n",
+      "\n",
+      " [[ 1.  2.  2. ...  3.  3.  2.]]\n",
+      "\n",
+      " [[ 1.  1.  1. ...  0.  0.  0.]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "NPARR = np.array([\n",
+    "                 [heart.age], [heart.sex], [heart.cp], \n",
+    "                 [heart.trestbps], [heart.chol], [heart.fbs],\n",
+    "                 [heart.restecg], [heart.thalach], \n",
+    "                 [heart.exang], [heart.oldpeak], [heart.slope], \n",
+    "                 [heart.ca], [heart.thal], [heart.target]\n",
+    "                ])\n",
+    "print(NPARR)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "efd3de9b",
+   "metadata": {},
+   "source": [
+    "### Perform the following operations on NPARR"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "20219ace",
+   "metadata": {},
+   "source": [
+    "### 1.) Print The Shape "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "52a03ace",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(14, 1, 303)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(NPARR.shape)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6ca82089",
+   "metadata": {},
+   "source": [
+    "### 2.) Print the Dimensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "0d0a0798",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(NPARR.ndim)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "458a18a7",
+   "metadata": {},
+   "source": [
+    "### 3.) Perform sclicing on NPARR and create new variable NPARR_1 that contains the last column"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "id": "c3c34d8c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 57.]\n",
+      " [  0.]\n",
+      " [  1.]\n",
+      " [130.]\n",
+      " [236.]\n",
+      " [  0.]\n",
+      " [  0.]\n",
+      " [174.]\n",
+      " [  0.]\n",
+      " [  0.]\n",
+      " [  1.]\n",
+      " [  1.]\n",
+      " [  2.]\n",
+      " [  0.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "NPARR_1 = NPARR[:,:,302]\n",
+    "print(NPARR_1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "81a3457e",
+   "metadata": {},
+   "source": [
+    "### 4.) Find the Min and Max element from NPARR 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "id": "b58760c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The Maximum element is NPARR_1 is 236.0\n",
+      "The Minimum element is NPARR_1 is 0.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\"The Maximum element is NPARR_1 is {np.max(NPARR_1)}\")\n",
+    "print(f\"The Minimum element is NPARR_1 is {np.min(NPARR_1)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 94,
+   "id": "6a219552",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[[63. 37. 41. ... 68. 57. 57.]]\n",
+      "\n",
+      " [[ 1.  1.  0. ...  1.  1.  0.]]\n",
+      "\n",
+      " [[ 3.  2.  1. ...  0.  0.  1.]]\n",
+      "\n",
+      " ...\n",
+      "\n",
+      " [[ 0.  0.  0. ...  2.  1.  1.]]\n",
+      "\n",
+      " [[ 1.  2.  2. ...  3.  3.  2.]]\n",
+      "\n",
+      " [[ 1.  1.  1. ...  0.  0.  0.]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(NPARR)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "890cbb4d",
+   "metadata": {},
+   "source": [
+    "### Compute the statistical values such as mean, median, range, standard deviation and Variance on certain set of columns using NumPy in-built functions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5288ec33",
+   "metadata": {},
+   "source": [
+    "### `trestbps` -> mean , median, range, standard deviation and variance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "id": "2edd9051",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " Mean-> 131.62376237623764\n",
+      " Median-> 130.0\n",
+      " Range-> 106.0\n",
+      " Standard Deviation-> 17.509178065734393\n",
+      " Variance-> 306.5713165375944\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\" Mean-> {NPARR[3,:,:].mean()}\")\n",
+    "print(f\" Median-> {np.median(NPARR[3,:,:])}\")\n",
+    "print(f\" Range-> {np.ptp(NPARR[3,:,:])}\")\n",
+    "print(f\" Standard Deviation-> {NPARR[3,:,:].std()}\")\n",
+    "print(f\" Variance-> {NPARR[3,:,:].var()}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2831b252",
+   "metadata": {},
+   "source": [
+    "### `chol` -> mean , median, range, standard deviation and variance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 108,
+   "id": "f4623b3c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " Mean-> 246.26402640264027\n",
+      " Median-> 240.0\n",
+      " Range-> 438.0\n",
+      " Standard Deviation-> 51.74515101045713\n",
+      " Variance-> 2677.560653095012\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\" Mean-> {NPARR[4,:,:].mean()}\")\n",
+    "print(f\" Median-> {np.median(NPARR[4,:,:])}\")\n",
+    "print(f\" Range-> {np.ptp(NPARR[4,:,:])}\")\n",
+    "print(f\" Standard Deviation-> {NPARR[4,:,:].std()}\")\n",
+    "print(f\" Variance-> {NPARR[4,:,:].var()}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fe077e73",
+   "metadata": {},
+   "source": [
+    "### `thalach` -> mean , median, range, standard deviation and variance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 109,
+   "id": "69f38717",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " Mean-> 149.64686468646866\n",
+      " Median-> 153.0\n",
+      " Range-> 131.0\n",
+      " Standard Deviation-> 22.86733258188924\n",
+      " Variance-> 522.9148994107331\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\" Mean-> {NPARR[7,:,:].mean()}\")\n",
+    "print(f\" Median-> {np.median(NPARR[7,:,:])}\")\n",
+    "print(f\" Range-> {np.ptp(NPARR[7,:,:])}\")\n",
+    "print(f\" Standard Deviation-> {NPARR[7,:,:].std()}\")\n",
+    "print(f\" Variance-> {NPARR[7,:,:].var()}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2fbfff14",
+   "metadata": {},
+   "source": [
+    "### `oldpeak` -> mean , median, range, standard deviation and variance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 110,
+   "id": "96d5ca32",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " Mean-> 1.0396039603960396\n",
+      " Median-> 0.8\n",
+      " Range-> 6.2\n",
+      " Standard Deviation-> 1.1591574732421364\n",
+      " Variance-> 1.3436460477730943\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\" Mean-> {NPARR[9,:,:].mean()}\")\n",
+    "print(f\" Median-> {np.median(NPARR[9,:,:])}\")\n",
+    "print(f\" Range-> {np.ptp(NPARR[9,:,:])}\")\n",
+    "print(f\" Standard Deviation-> {NPARR[9,:,:].std()}\")\n",
+    "print(f\" Variance-> {NPARR[9,:,:].var()}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "978ba993",
+   "metadata": {},
+   "source": [
+    "_____________________________________________________________________________"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
