@@ -1,4 +1,4 @@
-def singleNumber(self, nums: List[int]) -> List[int]:
+def singleNumber(nums):
     res = 0
     for x in nums:
         res = res ^ x
